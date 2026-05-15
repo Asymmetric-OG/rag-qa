@@ -32,6 +32,8 @@ This project displays RAGs ability to help improve an LLMs answering capabilitie
 | Frontend | Streamlit |
 | Backend API | FastAPI |
 
+---
+
 ## Installation
 
 ### 1. Clone the Repository
@@ -40,8 +42,6 @@ This project displays RAGs ability to help improve an LLMs answering capabilitie
 git clone <your-repository-url>
 cd <repository-name>
 ```
-
----
 
 ### 2. Create a Virtual Environment
 
@@ -63,17 +63,14 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
----
-
-## 3. Install Dependencies
+### 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
 
-## 4. Configure Environment Variables
+### 5. Configure Environment Variables
 
 Create a `.env` file in the project root:
 
@@ -85,7 +82,7 @@ HUGGINGFACEHUB_API_TOKEN=your_token_here
 
 ## Running the Project
 
-### Step 1 — Add Documents
+### 1. Add Documents
 
 Place all PDF files inside:
 
@@ -93,9 +90,7 @@ Place all PDF files inside:
 research/
 ```
 
----
-
-### Step 2 — Start FastAPI Backend
+### 2. Start FastAPI Backend
 
 ```bash
 uvicorn rag_chain:app --reload
@@ -107,10 +102,22 @@ Backend runs at:
 http://127.0.0.1:8000
 ```
 
----
-
-### Step 3 — Start Streamlit Frontend
+### 3. Start Streamlit Frontend
 
 ```bash
 streamlit run app.py
 ```
+
+## File Structure
+
+```text
+├── app.py                 # Streamlit frontend
+├── rag_chain.py           # RAG pipeline and FastAPI backend
+├── requirements.txt       # Project dependencies
+├── .env                   # Hugging Face API token
+├── research/              # PDF document corpus
+│   ├── paper1.pdf
+│   ├── paper2.pdf
+│   └── ...
+```
+
