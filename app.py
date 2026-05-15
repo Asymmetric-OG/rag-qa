@@ -1,22 +1,20 @@
 import streamlit as st
-from rag_chain import answer_question, setup_vector_store
+import requests
 
-st.set_page_config(page_title="📚 RAG Q&A", layout="centered")
-st.title("📄 Ask a Research Question")
-st.write("Ask a question based on the uploaded research papers.")
-
-@st.cache_resource
-def initialize():
-    setup_vector_store()
-initialize()
+st.set_page_config(page_title="RAG Q&A Powered by FastAPI", layout="centered")
+st.title("Ask a Query")
+st.write("Ask a question based on the uploaded documents")
 
 question = st.text_input("Enter your question:")
 
+API_ENDPOINT='http://127.0.0.1:8000/chat'
+
+
 if st.button("Ask"):
-    if not question.strip():
+    query = {'question' : question}
+    if not query['question'].strip():
         st.warning("Please enter a question.")
     else:
         with st.spinner("Thinking..."):
-            answer = answer_question(question)
-        st.markdown("### 🧠 Answer")
-        st.success(answer)
+            response = requests.post(url=API_ENDPOINT, json=query)
+            st.write(response.json()['answer'])
