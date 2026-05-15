@@ -1,5 +1,6 @@
 <h1 align="center">
-  Retrieval Augmented Generation based Q&A System
+  Retrieval Augmented Generation based <br>
+  Q&A System
 </h1>
 
 <br>
