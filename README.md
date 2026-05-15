@@ -49,7 +49,7 @@ cd <repository-name>
 python -m venv .venv
 ```
 
-### Activate Environment
+### 3. Activate Environment
 
 #### Windows
 
@@ -114,10 +114,3 @@ http://127.0.0.1:8000
 ```bash
 streamlit run app.py
 ```
-
-```
-## VIDEO
-
-https://github.com/user-attachments/assets/c620bf9e-2c26-48c6-8709-3f343fc46b01
-
----
