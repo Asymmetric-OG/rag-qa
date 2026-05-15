@@ -1,41 +1,121 @@
 # Retrieval Augmented Generation based Q&A System
 
 LLMs when asked highly specific subject matter based questions tend to be vague and hallucinate due to the excess of training corpus they are fed.
-This project displays RAGs ability to help improve an LLMs answering capabilities on such queries by providing them with most relevant chunks from required documents, 
+This project displays RAGs ability to help improve an LLMs answering capabilities on such queries by providing them with most relevant chunks from required documents,
 
 ---
-## Technologies
 
-- `Python`
-- `LangChain`
-- `FAISS`
-- `Hugging Face Transformers`
-- `Hugging Face Embeddings`
-- `PyPDF`
-- `RecursiveCharacterSplitter` 
----
-## Steps to operate
+## Features
 
-1. Load required documents/corpus into `research/` folder as PDFs.
-2. Execute `app.py` to launch the frontend.
-3. Input a query pertaining to the loaded corpus.  
-4. Receive a well phrased and context accurate response/explanation.
+- PDF based document ingestion
+- Semantic search using dense vector embeddings
+- FAISS powered similarity retrieval
+- Context grounded answer generation
+- LangGraph based retrieval-generation workflow
+- Streamlit frontend for interaction
+- Modular backend architecture for easy extension
 
 ---
-## How it works
 
-- Ingests pdfs from the provided corpus. 
-- Chunks the text and embeds it using `all-mpnet-base-v2`. 
-- Stores chunks into `FAISS` wih `FLAT` indexing providing highly accurate retrieval. 
-- Uses publicly available LLMSs (like `flan-t5-base`) to generate answers from retrieved chunks.
-- Streamlit based frontend for easy interaction and prototyping.
----
-## File Overview
+## Tech Stack
 
-- `app.py`: Frontend activation.
-- `rag_chain.py`: Backend RAG pipeline.
-- `research/`: Documents/Corpus to be queried.
+| Component | Technology |
+|---|---|
+| Language | Python |
+| LLM Orchestration | LangChain |
+| Workflow Graph | LangGraph |
+| Vector Database | FAISS |
+| Embeddings | Hugging Face Embeddings |
+| LLM Provider | Hugging Face Inference API |
+| PDF Parsing | PyPDFLoader |
+| Text Chunking | RecursiveCharacterTextSplitter |
+| Frontend | Streamlit |
+| Backend API | FastAPI |
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repository-url>
+cd <repository-name>
+```
+
 ---
+
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+### Activate Environment
+
+#### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+#### Linux / MacOS
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4. Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+HUGGINGFACEHUB_API_TOKEN=your_token_here
+```
+
+---
+
+## Running the Project
+
+### Step 1 — Add Documents
+
+Place all PDF files inside:
+
+```text
+research/
+```
+
+---
+
+### Step 2 — Start FastAPI Backend
+
+```bash
+uvicorn rag_chain:app --reload
+```
+
+Backend runs at:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+### Step 3 — Start Streamlit Frontend
+
+```bash
+streamlit run app.py
+```
+
+```
 ## VIDEO
 
 https://github.com/user-attachments/assets/c620bf9e-2c26-48c6-8709-3f343fc46b01
