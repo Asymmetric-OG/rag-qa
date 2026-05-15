@@ -1,23 +1,26 @@
-<div align="center">
-
-# Retrieval Augmented Generation based Q&A System
-
-LLMs when asked highly specific subject matter questions often produce vague or hallucinated responses due to the breadth of their training corpus.
-
-This project demonstrates how Retrieval Augmented Generation (RAG) improves answer quality by retrieving the most relevant document chunks and grounding the LLM response in contextual information.
+<h1 align="center">
+  Retrieval Augmented Generation based Q&A System
+</h1>
 
 <br>
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-121212?style=for-the-badge)
-![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=for-the-badge)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
+<p align="center">
 
-</div>
+  <img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=python&logoColor=white">
 
----
+  <img src="https://img.shields.io/badge/LangChain-121212.svg?style=for-the-badge">
+
+  <img src="https://img.shields.io/badge/FAISS-0467DF.svg?style=for-the-badge">
+
+  <img src="https://img.shields.io/badge/FastAPI-009688.svg?style=for-the-badge&logo=fastapi&logoColor=white">
+
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white">
+
+  <img src="https://img.shields.io/badge/HuggingFace-FFD21E.svg?style=for-the-badge&logo=huggingface&logoColor=black">
+
+</p>
+
+##
 
 ## Features
 
